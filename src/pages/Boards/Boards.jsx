@@ -35,6 +35,12 @@ export default function Boards() {
       }
     } catch (err) {
       console.log(err);
+       console.error("Boards Error:", err);
+  console.log("Response:", err.response);
+  console.log("Data:", err.response?.data);
+  console.log("Status:", err.response?.status);
+
+  alert(err.response?.data?.message || err.message);
       setErrorMsg("Failed to load boards");
     } finally {
       setLoading(false);
