@@ -62,14 +62,17 @@ export default function AuthProvider({ children }) {
   };
 
   const logout = async () => {
-    try {
-      await authAPI.logout();
-    } catch {}
+  // UI ko pehle update karo
+  storageHelper.removeItem("token");
+  setUser(null);
 
-    storageHelper.removeItem("token");
-
-    setUser(null);
-  };
+  // API ko background me call karo
+  try {
+    await authAPI.logout();
+  } catch (err) {
+    console.log(err);
+  }
+};
 
   return (
     <AuthContext.Provider

@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 
 import Login from "../pages/Login/Login";
 import Boards from "../pages/Boards/Boards";
@@ -10,7 +10,7 @@ import Content from "../pages/Content/Content";
 
 export default function AppRoutes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/boards" element={<Boards />} />
@@ -20,6 +20,6 @@ export default function AppRoutes() {
         <Route path="/topics" element={<Topics />} />
         <Route path="/content" element={<Content />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
