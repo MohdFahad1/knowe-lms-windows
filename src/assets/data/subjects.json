@@ -1,0 +1,50 @@
+{
+  "success": true,
+  "data": [
+    {
+      "lms_subject_id": 1278,
+      "lms_for_id": 3,
+      "lms_branch_class_id": 8,
+      "subject_name": "Hindi",
+      "subject_priority": 5,
+      "ext": "gif",
+      "img_new_old": "New"
+    },
+    {
+      "lms_subject_id": 998,
+      "lms_for_id": 3,
+      "lms_branch_class_id": 8,
+      "subject_name": "English",
+      "subject_priority": 4,
+      "ext": "png",
+      "img_new_old": "New"
+    },
+    {
+      "lms_subject_id": 31,
+      "lms_for_id": 3,
+      "lms_branch_class_id": 8,
+      "subject_name": "Social Science",
+      "subject_priority": 3,
+      "ext": "png",
+      "img_new_old": "New"
+    },
+    {
+      "lms_subject_id": 30,
+      "lms_for_id": 3,
+      "lms_branch_class_id": 8,
+      "subject_name": "Mathematics",
+      "subject_priority": 1,
+      "ext": "png",
+      "img_new_old": "New"
+    },
+    {
+      "lms_subject_id": 19,
+      "lms_for_id": 3,
+      "lms_branch_class_id": 8,
+      "subject_name": "Science",
+      "subject_priority": 2,
+      "ext": "png",
+      "img_new_old": "New"
+    }
+  ]
+}

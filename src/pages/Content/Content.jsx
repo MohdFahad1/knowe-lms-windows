@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { contentAPI } from "../../services/api";
+// import { contentAPI } from "../../services/api";
 import {
   ArrowLeft,
   FileText,
@@ -10,6 +10,7 @@ import {
   Sparkles,
   RefreshCw,
 } from "lucide-react";
+import offlineAPI from "../../services/offlineApi";
 
 // Cycle of accent gradients so each content item's icon badge gets its own personality
 const ACCENTS = [
@@ -48,35 +49,65 @@ export default function Content() {
     fetchContent();
   }, []);
 
+  // const fetchContent = async () => {
+  //   setLoading(true);
+  //   setErrorMsg("");
+  //   try {
+  //     const response = await contentAPI.getAll(
+  //       classId,
+  //       subjectId,
+  //       chapterId,
+  //       topicId,
+  //     );
+
+  //     console.log(response.data);
+
+  //     if (response.data.success) {
+  //       const data = response.data.data || [];
+
+  //       setContents(data);
+
+  //       if (data.length > 0) {
+  //         setSelectedContent(data[0]);
+  //       }
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     setErrorMsg("Failed to load content");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const fetchContent = async () => {
-    setLoading(true);
-    setErrorMsg("");
-    try {
-      const response = await contentAPI.getAll(
-        classId,
-        subjectId,
-        chapterId,
-        topicId,
-      );
+  setLoading(true);
+  setErrorMsg("");
 
-      console.log(response.data);
+  try {
+    const data = await offlineAPI.getContent(
+      classId,
+      subjectId,
+      chapterId,
+      topicId
+    );
 
-      if (response.data.success) {
-        const data = response.data.data || [];
+    console.log("CONTENT DATA:", data);
+    console.log("IS ARRAY:", Array.isArray(data));
 
-        setContents(data);
+    setContents(data);
 
-        if (data.length > 0) {
-          setSelectedContent(data[0]);
-        }
-      }
-    } catch (err) {
-      console.log(err);
-      setErrorMsg("Failed to load content");
-    } finally {
-      setLoading(false);
+    if (data.length > 0) {
+      setSelectedContent(data[0]);
+    } else {
+      setSelectedContent(null);
     }
-  };
+  } catch (err) {
+    console.error("Content Error:", err);
+    setErrorMsg("Failed to load content");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="flex h-screen bg-[#F7F7FB]">

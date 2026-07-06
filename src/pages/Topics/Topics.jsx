@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { topicsAPI } from "../../services/api";
+// import { topicsAPI } from "../../services/api";
 import Header from "../../components/Header";
 import { ArrowLeft, ArrowRight, ListChecks, Layers, RefreshCw, Sparkles } from "lucide-react";
+import offlineAPI from "../../services/offlineApi";
 
 // Cycle of accent gradients so each topic card gets its own personality
 const ACCENTS = [
@@ -39,24 +40,40 @@ export default function Topics() {
     fetchTopics();
   }, []);
 
+  // const fetchTopics = async () => {
+  //   setLoading(true);
+  //   setErrorMsg("");
+  //   try {
+  //     const response = await topicsAPI.getAll(classId, subjectId, chapterId);
+
+  //     console.log(response.data);
+
+  //     if (response.data.success) {
+  //       setTopics(response.data.data);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     setErrorMsg("Failed to load topics");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
   const fetchTopics = async () => {
-    setLoading(true);
-    setErrorMsg("");
-    try {
-      const response = await topicsAPI.getAll(classId, subjectId, chapterId);
+  setLoading(true);
+  setErrorMsg("");
 
-      console.log(response.data);
+  try {
+    const data = offlineAPI.getTopics(chapterId);
 
-      if (response.data.success) {
-        setTopics(response.data.data);
-      }
-    } catch (err) {
-      console.log(err);
-      setErrorMsg("Failed to load topics");
-    } finally {
-      setLoading(false);
-    }
-  };
+    setTopics(data);
+  } catch (err) {
+    console.error(err);
+    setErrorMsg("Failed to load topics");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#F3F0FF] via-[#FAF9FF] to-[#FFF1F8]">

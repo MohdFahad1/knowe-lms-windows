@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { chaptersAPI } from "../../services/api";
 import Header from "../../components/Header";
 import { ArrowLeft, ArrowRight, FileText, Layers, RefreshCw, Sparkles } from "lucide-react";
+import offlineAPI from "../../services/offlineApi";
 
 // Cycle of accent gradients so each chapter card gets its own personality
 const ACCENTS = [
@@ -28,24 +29,41 @@ export default function Chapters() {
     fetchChapters();
   }, []);
 
+  // const fetchChapters = async () => {
+  //   setLoading(true);
+  //   setErrorMsg("");
+  //   try {
+  //     const response = await chaptersAPI.getBySubject(classId, subjectId);
+
+  //     console.log(response.data);
+
+  //     if (response.data.success) {
+  //       setChapters(response.data.data);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     setErrorMsg("Failed to load chapters");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const fetchChapters = async () => {
-    setLoading(true);
-    setErrorMsg("");
-    try {
-      const response = await chaptersAPI.getBySubject(classId, subjectId);
+  setLoading(true);
+  setErrorMsg("");
 
-      console.log(response.data);
+  try {
+    const data = offlineAPI.getChapters(subjectId);
 
-      if (response.data.success) {
-        setChapters(response.data.data);
-      }
-    } catch (err) {
-      console.log(err);
-      setErrorMsg("Failed to load chapters");
-    } finally {
-      setLoading(false);
-    }
-  };
+    setChapters(data);
+  } catch (err) {
+    console.error(err);
+    setErrorMsg("Failed to load chapters");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#F3F0FF] via-[#FAF9FF] to-[#FFF1F8]">

@@ -3,6 +3,8 @@ import { boardsAPI } from "../../services/api";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import { ArrowRight, BookOpen, Layers, RefreshCw, Sparkles } from "lucide-react";
+import offlineAPI from "../../services/offlineApi";
+
 
 // Cycle of accent gradients so each board card gets its own personality
 const ACCENTS = [
@@ -24,28 +26,46 @@ export default function Boards() {
     fetchBoards();
   }, []);
 
+  // const fetchBoards = async () => {
+  //   setLoading(true);
+  //   setErrorMsg("");
+  //   try {
+  //     const response = await boardsAPI.getAll();
+
+  //     if (response.data.success) {
+  //       setBoards(response.data.data);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //      console.error("Boards Error:", err);
+  // console.log("Response:", err.response);
+  // console.log("Data:", err.response?.data);
+  // console.log("Status:", err.response?.status);
+
+  // alert(err.response?.data?.message || err.message);
+  //     setErrorMsg("Failed to load boards");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const fetchBoards = async () => {
-    setLoading(true);
-    setErrorMsg("");
-    try {
-      const response = await boardsAPI.getAll();
+  setLoading(true);
+  setErrorMsg("");
 
-      if (response.data.success) {
-        setBoards(response.data.data);
-      }
-    } catch (err) {
-      console.log(err);
-       console.error("Boards Error:", err);
-  console.log("Response:", err.response);
-  console.log("Data:", err.response?.data);
-  console.log("Status:", err.response?.status);
+  try {
+    const data = offlineAPI.getBoards();
 
-  alert(err.response?.data?.message || err.message);
-      setErrorMsg("Failed to load boards");
-    } finally {
-      setLoading(false);
-    }
-  };
+    setBoards(data);
+  } catch (err) {
+    console.error(err);
+
+    setErrorMsg("Failed to load boards");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#F3F0FF] via-[#FAF9FF] to-[#FFF1F8]">

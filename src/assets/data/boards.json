@@ -1,0 +1,31 @@
+{ "success": 
+    true, 
+    "data": [ 
+        { "boardId": 1, 
+            "boardName": "NCERT English Medium", 
+            "classes": [ 
+                { 
+                    "id": 8, 
+                    "name": "Class X" 
+                    }, 
+                    { 
+                        "id": 9, 
+                        "name": "Class IX" 
+                    } 
+            ] 
+        }, 
+        { 
+            "boardId": 26, 
+            "boardName": "Samples", 
+            "classes": [ 
+                { "id": 18, 
+                "name": "Content Design" 
+                }, 
+                { 
+                    "id": 193, 
+                    "name": "BMC" 
+                } 
+            ] 
+        } 
+    ] 
+}

@@ -1,0 +1,179 @@
+{
+  "success": true,
+  "data": [
+    {
+      "lms_subject_id": 30,
+      "subject_name": "Mathematics",
+      "chapters": [
+        {
+          "lms_subject_chapter_id": 726,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Real Numbers",
+          "subject_chapter_description": "Real Numbers",
+          "subject_chapter_objective": "  Real Numbers",
+          "subject_chapter_priority": 2,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 740,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Polynomials",
+          "subject_chapter_description": "Polynomials",
+          "subject_chapter_objective": "  Polynomials",
+          "subject_chapter_priority": 3,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 741,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Pair of Linear Equations in Two Variables",
+          "subject_chapter_description": "Pair of Linear Equations in Two Variables",
+          "subject_chapter_objective": "   Pair of Linear Equations in Two Variables",
+          "subject_chapter_priority": 4,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 55,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Quadratic Equations",
+          "subject_chapter_description": "Quadratic Equations",
+          "subject_chapter_objective": "    Quadratic Equations ",
+          "subject_chapter_priority": 5,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 56,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Arithmetic Progressions",
+          "subject_chapter_description": "Arithmetic Progressions",
+          "subject_chapter_objective": "    Arithmetic Progressions ",
+          "subject_chapter_priority": 6,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 57,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Triangles",
+          "subject_chapter_description": "Triangles",
+          "subject_chapter_objective": "    Triangles ",
+          "subject_chapter_priority": 7,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 58,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Coordinate Geometry",
+          "subject_chapter_description": "Coordinate Geometry",
+          "subject_chapter_objective": "    Coordinate Geometry ",
+          "subject_chapter_priority": 8,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 59,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Introduction to Trigonometry",
+          "subject_chapter_description": "Introduction to Trigonometry",
+          "subject_chapter_objective": "   Introduction to Trigonometry ",
+          "subject_chapter_priority": 9,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 748,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Some Applications of Trigonometry",
+          "subject_chapter_description": "Some Applications of Trigonometry",
+          "subject_chapter_objective": "    Some Applications of Trigonometry",
+          "subject_chapter_priority": 10,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 60,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Circles",
+          "subject_chapter_description": "Circles",
+          "subject_chapter_objective": "      Circles ",
+          "subject_chapter_priority": 11,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 62,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Areas Related to Circles",
+          "subject_chapter_description": "Areas Related to Circles",
+          "subject_chapter_objective": " Areas Related to Circles ",
+          "subject_chapter_priority": 13,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 63,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Surface areas and volumes",
+          "subject_chapter_description": "Surface areas and volumes",
+          "subject_chapter_objective": " Surface areas and volumes ",
+          "subject_chapter_priority": 14,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 64,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Statistics",
+          "subject_chapter_description": "Statistics",
+          "subject_chapter_objective": "  Statistics ",
+          "subject_chapter_priority": 15,
+          "ext": "gif",
+          "img_new_old": "New"
+        },
+        {
+          "lms_subject_chapter_id": 65,
+          "lms_for_id": "3",
+          "lms_branch_class_id": 8,
+          "lms_subject_id": 30,
+          "subject_chapter_name": "Probability",
+          "subject_chapter_description": "Probability",
+          "subject_chapter_objective": "  Probability ",
+          "subject_chapter_priority": 16,
+          "ext": "gif",
+          "img_new_old": "New"
+        }
+      ]
+    }
+  ]
+}

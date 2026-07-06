@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { subjectsAPI } from "../../services/api";
 import Header from "../../components/Header";
 import { ArrowLeft, ArrowRight, BookText, Layers, RefreshCw, Sparkles } from "lucide-react";
+import offlineAPI from "../../services/offlineApi";
 
 // Cycle of accent gradients so each subject card gets its own personality
 const ACCENTS = [
@@ -27,22 +28,38 @@ export default function Subjects() {
     fetchSubjects();
   }, []);
 
-  const fetchSubjects = async () => {
-    setLoading(true);
-    setErrorMsg("");
-    try {
-      const response = await subjectsAPI.getAll(classId);
+  // const fetchSubjects = async () => {
+  //   setLoading(true);
+  //   setErrorMsg("");
+  //   try {
+  //     const response = await subjectsAPI.getAll(classId);
 
-      if (response.data.success) {
-        setSubjects(response.data.data);
-      }
-    } catch (err) {
-      console.log(err);
-      setErrorMsg("Failed to load subjects");
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     if (response.data.success) {
+  //       setSubjects(response.data.data);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     setErrorMsg("Failed to load subjects");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const fetchSubjects = async () => {
+  setLoading(true);
+  setErrorMsg("");
+
+  try {
+    const data = offlineAPI.getSubjects(classId);
+
+    setSubjects(data);
+  } catch (err) {
+    console.error(err);
+    setErrorMsg("Failed to load subjects");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#F3F0FF] via-[#FAF9FF] to-[#FFF1F8]">

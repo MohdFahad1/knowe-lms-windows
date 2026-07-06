@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { classesAPI } from "../../services/api";
 import { ArrowLeft, ArrowRight, GraduationCap, Layers, RefreshCw, Sparkles } from "lucide-react";
 import Header from "../../components/Header";
+import offlineAPI from "../../services/offlineApi";
 
 // Cycle of accent gradients so each class card gets its own personality
 const ACCENTS = [
@@ -27,22 +28,38 @@ export default function Classes() {
     fetchClasses();
   }, []);
 
-  const fetchClasses = async () => {
-    setLoading(true);
-    setErrorMsg("");
-    try {
-      const response = await classesAPI.getByBoard(boardId);
+  // const fetchClasses = async () => {
+  //   setLoading(true);
+  //   setErrorMsg("");
+  //   try {
+  //     const response = await classesAPI.getByBoard(boardId);
 
-      if (response.data.success && response.data.data.classes) {
-        setClasses(response.data.data.classes);
-      }
-    } catch (err) {
-      console.log(err);
-      setErrorMsg("Failed to load classes");
-    } finally {
-      setLoading(false);
-    }
-  };
+  //     if (response.data.success && response.data.data.classes) {
+  //       setClasses(response.data.data.classes);
+  //     }
+  //   } catch (err) {
+  //     console.log(err);
+  //     setErrorMsg("Failed to load classes");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+  const fetchClasses = async () => {
+  setLoading(true);
+  setErrorMsg("");
+
+  try {
+    const data = offlineAPI.getClasses(boardId);
+
+    setClasses(data);
+  } catch (err) {
+    console.error(err);
+    setErrorMsg("Failed to load classes");
+  } finally {
+    setLoading(false);
+  }
+};
 
   return (
     <div className="relative min-h-screen w-full overflow-hidden bg-gradient-to-br from-[#F3F0FF] via-[#FAF9FF] to-[#FFF1F8]">
