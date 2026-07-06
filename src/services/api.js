@@ -11,12 +11,34 @@ const api = axios.create({
   },
 });
 
+// api.interceptors.request.use((config) => {
+//   const token = storageHelper.getItem("token");
+
+//   console.log("================================");
+//   console.log("TOKEN:", token);
+//   console.log("URL:", config.url);
+
+//   if (token) {
+//     config.headers.Authorization = `Bearer ${token}`;
+//   }
+
+//   console.log("AUTH HEADER:", config.headers.Authorization);
+//   console.log("================================");
+
+//   return config;
+// });
+
 api.interceptors.request.use((config) => {
   const token = storageHelper.getItem("token");
+
+  console.log("TOKEN:", token);
+  console.log("URL:", config.url);
 
   if (token) {
     config.headers.Authorization = `Bearer ${token}`;
   }
+
+  console.log("AUTH HEADER:", config.headers.Authorization);
 
   return config;
 });
